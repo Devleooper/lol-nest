@@ -1,4 +1,4 @@
-import { Position, QueueType, Rank, Tier } from './enums';
+import { GameMode, GameType, Position, QueueType, Rank, Tier } from './enums';
 
 export interface KeyValue {
     key: string;
@@ -146,3 +146,274 @@ export interface Update {
     created_at: string;
     updated_at: string;
 }
+
+export interface MatchList {
+    matches: MatchReference[];
+    startIndex: number;
+    endIndex: number;
+    totalGames: number;
+}
+
+export interface MatchReference {
+    platformId: string;
+    gameId: number;
+    champion: number;
+    queue: number;
+    season: number;
+    timestamp: number;
+    role: string;
+    lane: string;
+}
+
+export interface Match {
+    gameId: number;
+    participantIdentities: ParticipantIdentity[];
+    queueId: number;
+    gameType: GameType;
+    gameDuration: number;
+    teams: TeamStats[];
+    platformId: string;
+    gameCreation: number;
+    seasonId: number;
+    gameVersion: string;
+    mapId: number;
+    gameMode: GameMode;
+    participants: Participant[];
+}
+
+export interface ParticipantIdentity {
+    participantId: number;
+    player: Player;
+}
+
+export interface Player {
+    profileIcon: number;
+    accountId: string;
+    matchHistoryUri: string;
+    currentAccountId: string;
+    currentPlatformId: string;
+    summonerName: string;
+    summonerId: string;
+    platformId: string;
+}
+
+export interface TeamStats {
+    towerKills: number;
+    riftHeraldKills: number;
+    firstBlood: boolean;
+    inhibitorKills: number;
+    bans: TeamBans[];
+    firstBaron: boolean;
+    firstDragon: boolean;
+    dominionVictoryScore: number;
+    dragonKills: number;
+    baronKills: number;
+    firstInhibitor: boolean;
+    firstTower: boolean;
+    vilemawKills: number;
+    firstRiftHerald: boolean;
+    teamId: number;
+    win: string;
+}
+
+export interface TeamBans {
+    championId: number;
+    pickTurn: number;
+}
+
+export interface Participant {
+    participantId: number;
+    championId: number;
+    runes: Rune[];
+    stats: ParticipantStats;
+    teamId: number;
+    timeline: ParticipantTimeline;
+    spell1Id: number;
+    spell2Id: number;
+    highestAchievedSeasonTier: string;
+    masteries: Mastery[];
+}
+
+export interface Rune {
+    runeId: number;
+    rank: number;
+}
+
+export interface ParticipantStats {
+    participantId: number;
+    win: boolean;
+    item0: number;
+    item1: number;
+    item2: number;
+    item3: number;
+    item4: number;
+    item5: number;
+    item6: number;
+    kills: number;
+    deaths: number;
+    assists: number;
+    largestKillingSpree: number;
+    largestMultiKill: number;
+    killingSprees: number;
+    longestTimeSpentLiving: number;
+    doubleKills: number;
+    tripleKills: number;
+    quadraKills: number;
+    pentaKills: number;
+    unrealKills: number;
+    totalDamageDealt: number;
+    magicDamageDealt: number;
+    physicalDamageDealt: number;
+    trueDamageDealt: number;
+    largestCriticalStrike: number;
+    totalDamageDealtToChampions: number;
+    magicDamageDealtToChampions: number;
+    physicalDamageDealtToChampions: number;
+    trueDamageDealtToChampions: number;
+    totalHeal: number;
+    totalUnitsHealed: number;
+    damageSelfMitigated: number;
+    damageDealtToObjectives: number;
+    damageDealtToTurrets: number;
+    visionScore: number;
+    timeCCingOthers: number;
+    totalDamageTaken: number;
+    magicalDamageTaken: number;
+    physicalDamageTaken: number;
+    trueDamageTaken: number;
+    goldEarned: number;
+    goldSpent: number;
+    turretKills: number;
+    inhibitorKills: number;
+    totalMinionsKilled: number;
+    neutralMinionsKilled: number;
+    neutralMinionsKilledTeamJungle: number;
+    neutralMinionsKilledEnemyJungle: number;
+    totalTimeCrowdControlDealt: number;
+    champLevel: number;
+    visionWardsBoughtInGame: number;
+    sightWardsBoughtInGame: number;
+    wardsPlaced: number;
+    wardsKilled: number;
+    firstBloodKill: boolean;
+    firstBloodAssist: boolean;
+    firstTowerKill: boolean;
+    firstTowerAssist: boolean;
+    firstInhibitorKill: boolean;
+    firstInhibitorAssist: boolean;
+    combatPlayerScore: number;
+    objectivePlayerScore: number;
+    totalPlayerScore: number;
+    totalScoreRank: number;
+    playerScore0: number;
+    playerScore1: number;
+    playerScore2: number;
+    playerScore3: number;
+    playerScore4: number;
+    playerScore5: number;
+    playerScore6: number;
+    playerScore7: number;
+    playerScore8: number;
+    playerScore9: number;
+    perk0: number;
+    perk0Var1: number;
+    perk0Var2: number;
+    perk0Var3: number;
+    perk1: number;
+    perk1Var1: number;
+    perk1Var2: number;
+    perk1Var3: number;
+    perk2: number;
+    perk2Var1: number;
+    perk2Var2: number;
+    perk2Var3: number;
+    perk3: number;
+    perk3Var1: number;
+    perk3Var2: number;
+    perk3Var3: number;
+    perk4: number;
+    perk4Var1: number;
+    perk4Var2: number;
+    perk4Var3: number;
+    perk5: number;
+    perk5Var1: number;
+    perk5Var2: number;
+    perk5Var3: number;
+    perkPrimaryStyle: number;
+    perkSubStyle: number;
+    statPerk0: number;
+    statPerk1: number;
+    statPerk2: number;
+}
+
+export interface ParticipantTimeline {
+    participantId: number;
+    creepsPerMinDeltas: Map<string, number>;
+    xpPerMinDeltas: Map<string, number>;
+    goldPerMinDeltas: Map<string, number>;
+    csDiffPerMinDeltas: Map<string, number>;
+    xpDiffPerMinDeltas: Map<string, number>;
+    damageTakenPerMinDeltas: Map<string, number>;
+    damageTakenDiffPerMinDeltas: Map<string, number>;
+    role: string;
+    lane: string;
+}
+
+export interface Mastery {
+    rank: number;
+    masteryId: number;
+}
+
+export interface MatchTimeline {
+    frames: MatchFrame[];
+    frameInterval: number;
+}
+
+export interface MatchFrame {
+    participantFrames: Map<string , MatchParticipantFrame>;
+    events: Event[];
+    timestamp: number;
+}
+
+export interface Event {
+    type: string;
+    timestamp: number;
+    participantId: number;
+    itemId: number;
+    skillSlot?: number;
+    levelUpType: string;
+    wardType: string;
+    creatorId?: number;
+    position: MatchPosition;
+    killerId?: number;
+    victimId?: number;
+    assistingParticipantIds: number[];
+    afterId?: number;
+    beforeId?: number;
+    monsterType: string;
+    monsterSubType: string;
+    teamId?: number;
+    buildingType: string;
+    laneType: string;
+    towerType: string;
+}
+
+export interface MatchParticipantFrame {
+    participantId: number;
+    position: MatchPosition;
+    currentGold: number;
+    totalGold: number;
+    level: number;
+    xp: number;
+    minionsKilled: number;
+    jungleMinionsKilled: number;
+    dominionScore: number;
+    teamScore: number;
+}
+
+export interface MatchPosition {
+    x: number;
+    y: number;
+}
+
+

@@ -9,7 +9,6 @@ import { LeagueService } from './league/league.service';
 import { LeagueStatusService } from './league-status/league-status.service';
 import { MatchService } from './match/match.service';
 import { SpectatorService } from './spectator/spectator.service';
-import { TournamentService } from './tournament/tournament.service';
 
 @Module({
     imports: [HttpModule],
@@ -23,8 +22,7 @@ import { TournamentService } from './tournament/tournament.service';
         LeagueService,
         LeagueStatusService,
         MatchService,
-        SpectatorService,
-        TournamentService
+        SpectatorService
     ],
     exports: [
         SummonerService,
@@ -34,8 +32,7 @@ import { TournamentService } from './tournament/tournament.service';
         LeagueService,
         LeagueStatusService,
         MatchService,
-        SpectatorService,
-        TournamentService
+        SpectatorService
     ]
 })
 export class ApiModule { }

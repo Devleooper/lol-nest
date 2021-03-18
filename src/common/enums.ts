@@ -21,7 +21,6 @@ export enum Rank {
     IV = 'IV'
 }
 
-
 export enum Tier {
     CHALLENGER = 'CHALLENGER',
     GRANDMASTER = 'GRANDMASTER',
@@ -32,4 +31,32 @@ export enum Tier {
     SILVER = 'SILVER',
     BRONZE = 'BRONZE',
     IRON = 'IRON'
+}
+
+export enum GameType {
+    CUSTOM_GAME = 'CUSTOM_GAME',
+    TUTORIAL_GAME = 'TUTORIAL_GAME',
+    MATCHED_GAME = 'MATCHED_GAME'
+}
+
+export enum GameMode {
+    CLASSIC = 'CLASSIC',
+    ODIN = 'ODIN',
+    ARAM = 'ARAM',
+    TUTORIAL = 'TUTORIAL',
+    URF = 'URF',
+    DOOMBOTSTEEMO = 'DOOMBOTSTEEMO',
+    ONEFORALL = 'ONEFORALL',
+    ASCENSION = 'ASCENSION',
+    FIRSTBLOOD = 'FIRSTBLOOD',
+    KINGPORO = 'KINGPORO',
+    SIEGE = 'SIEGE',
+    ASSASSINATE = 'ASSASSINATE',
+    ARSR = 'ARSR',
+    DARKSTAR = 'DARKSTAR',
+    STARGUARDIAN = 'STARGUARDIAN',
+    PROJECT = 'PROJECT',
+    GAMEMODEX = 'GAMEMODEX',
+    ODYSSEY = 'ODYSSEY',
+    NEXUSBLITZ = 'NEXUSBLITZ'
 }
