@@ -5,10 +5,14 @@ import { LOL_STATUS } from './routes';
 
 @Injectable()
 export class LeagueStatusService {
+  constructor(private readonly client: ApiClient) {}
 
-    constructor(private readonly client: ApiClient) { }
-
-    public getPLatformStatus(region: string): Promise<PlatformData> {
-        return this.client.executeGet<PlatformData>(region, LOL_STATUS);
-    }
+  /**
+   * Get the Riot Platform status for a given region
+   * @param region - the region to execute the call
+   * @returns a PlatformData object indicating the status of the region servers
+   */
+  public getPLatformStatus(region: string): Promise<PlatformData> {
+    return this.client.executeGet<PlatformData>(region, LOL_STATUS);
+  }
 }
