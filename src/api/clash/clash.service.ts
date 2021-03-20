@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Player, Team, Tournament } from 'src/common/types';
+import { Player, Team, Tournament } from './../../common/types';
 import { ApiClient } from '../client/api-client';
 import {
   PLAYERS_BY_SUMMONER_ID,

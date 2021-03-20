@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ChampionMastery } from 'src/common/types';
+import { ChampionMastery } from './../../common/types';
 import { ApiClient } from '../client/api-client';
 import {
   MASTERY_BY_ENCRYPTED_SUMMONER_ID,

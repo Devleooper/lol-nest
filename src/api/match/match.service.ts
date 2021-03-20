@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { KeyValue, Match, MatchList, MatchTimeline } from 'src/common/types';
+import { KeyValue, Match, MatchList, MatchTimeline } from './../../common/types';
 import { ApiClient } from '../client/api-client';
 import {
   MATCHES_BY_ENCRYPTED_ACCOUNT_ID,

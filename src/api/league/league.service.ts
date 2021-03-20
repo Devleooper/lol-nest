@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { QueueType, Rank, Tier } from 'src/common/enums';
-import { LeagueEntry, LeagueList } from 'src/common/types';
+import { QueueType, Rank, Tier } from './../../common/enums';
+import { LeagueEntry, LeagueList } from './../../common/types';
 import { ApiClient } from '../client/api-client';
 import {
   CHALLENGER_LEAGUE_BY_QUEUE,

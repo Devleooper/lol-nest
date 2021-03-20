@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { RIOT_API_KEY, RIOT_API_URL } from 'src/constants/env.constants';
-import { API_KEY_HEADER } from 'src/constants/http.constants';
+import { RIOT_API_KEY, RIOT_API_URL } from './../constants/env.constants';
+import { API_KEY_HEADER } from './../constants/http.constants';
 
 @Injectable()
 export class ApiProvider {

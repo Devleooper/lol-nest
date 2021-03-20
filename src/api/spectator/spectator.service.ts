@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { CurrentGameInfo, FeaturedGames } from 'src/common/types';
+import { Injectable } from '@nestjs/common'
+import { CurrentGameInfo, FeaturedGames } from './../../common/types';
 import { ApiClient } from '../client/api-client';
 import { ACTIVE_GAME_BY_ENCRYPTED_SUMMONER_ID, FEATURED_GAMES } from './routes';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PlatformData } from 'src/common/types';
+import { PlatformData } from './../../common/types';
 import { ApiClient } from '../client/api-client';
 import { LOL_STATUS } from './routes';
 

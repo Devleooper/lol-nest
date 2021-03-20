@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ChampionInfo } from 'src/common/types';
+import { ChampionInfo } from './../../common/types';
 import { ApiClient } from '../client/api-client';
 import { CHAMPION_ROTATIONS } from './routes';
 

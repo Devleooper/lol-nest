@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ApiClient } from './../client/api-client';
-import { Summoner } from 'src/common/types';
+import { Summoner } from './../../common/types';
 import {
   SUMMONER_BY_ACCOUNT_ID,
   SUMMONER_BY_NAME,
