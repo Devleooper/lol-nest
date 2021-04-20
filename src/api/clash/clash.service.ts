@@ -8,6 +8,7 @@ import {
   TOURNAMENT_BY_ID,
   TOURNAMENT_BY_TEAM_ID,
 } from './routes';
+import { Region } from './../../common/enums';
 
 @Injectable()
 export class ClashService {
@@ -20,7 +21,7 @@ export class ClashService {
    * @returns a list of Player objects in the same clash tournament
    */
   public getClashPlayersBySummonerId(
-    region: string,
+    region: Region,
     summonerId: string,
   ): Promise<Player[]> {
     return this.client.executeGet<Player[]>(region, PLAYERS_BY_SUMMONER_ID, [
@@ -34,7 +35,7 @@ export class ClashService {
    * @param teamId - the id of the team
    * @returns a Team object with the detail of the clash team
    */
-  public getTeamById(region: string, teamId: string): Promise<Team> {
+  public getTeamById(region: Region, teamId: string): Promise<Team> {
     return this.client.executeGet<Team>(region, TEAM_BY_ID, [
       { key: 'teamId', value: teamId },
     ]);
@@ -45,7 +46,7 @@ export class ClashService {
    * @param region - the region to execute the call
    * @returns a list of Tournament objects with the next clash tournaments
    */
-  public getTournaments(region: string): Promise<Tournament[]> {
+  public getTournaments(region: Region): Promise<Tournament[]> {
     return this.client.executeGet<Tournament[]>(region, TOURNAMENTS);
   }
 
@@ -56,7 +57,7 @@ export class ClashService {
    * @returns a Tournament object with the clash tournament detail
    */
   public getTournamentByTeamId(
-    region: string,
+    region: Region,
     teamId: string,
   ): Promise<Tournament> {
     return this.client.executeGet<Tournament>(region, TOURNAMENT_BY_TEAM_ID, [
@@ -71,7 +72,7 @@ export class ClashService {
    * @returns the tournament object with all the details
    */
   public getTournamentById(
-    region: string,
+    region: Region,
     tournamentId: string,
   ): Promise<Tournament> {
     return this.client.executeGet<Tournament>(region, TOURNAMENT_BY_ID, [

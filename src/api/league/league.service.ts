@@ -10,6 +10,7 @@ import {
   LEAGUE_ENTRIES,
   MASTER_LEAGUE_BY_QUEUE,
 } from './routes';
+import { Region } from './../../common/enums';
 
 @Injectable()
 export class LeagueService {
@@ -22,7 +23,7 @@ export class LeagueService {
    * @returns a LeagueList objec
    */
   public getChallengerLeagueByQueue(
-    region: string,
+    region: Region,
     queue: QueueType,
   ): Promise<LeagueList> {
     return this.client.executeGet<LeagueList>(
@@ -39,7 +40,7 @@ export class LeagueService {
    * @returns a Set of LeagueEntry object indicating the different leagues of the player
    */
   public getLeagueEntriesForForSummoner(
-    region: string,
+    region: Region,
     encryptedSummonerId: string,
   ): Promise<Set<LeagueEntry>> {
     return this.client.executeGet<Set<LeagueEntry>>(
@@ -59,7 +60,7 @@ export class LeagueService {
    * @returns a Set of LeagueEntry objects (the current created leagues)
    */
   public getLeagueEntries(
-    region: string,
+    region: Region,
     queue: QueueType,
     tier: Tier,
     division: Rank,
@@ -84,7 +85,7 @@ export class LeagueService {
    * @returns a LeagueList object
    */
   public getGrandMasterLeagueByQueue(
-    region: string,
+    region: Region,
     queue: QueueType,
   ): Promise<LeagueList> {
     return this.client.executeGet<LeagueList>(
@@ -94,7 +95,7 @@ export class LeagueService {
     );
   }
 
-  public getLeagueById(region: string, leagueId: string): Promise<LeagueList> {
+  public getLeagueById(region: Region, leagueId: string): Promise<LeagueList> {
     return this.client.executeGet<LeagueList>(region, LEAGUE_BY_ID, [
       { key: 'leagueId', value: leagueId },
     ]);
@@ -107,7 +108,7 @@ export class LeagueService {
    * @returns a LeagueList object
    */
   public getMasterLeagueByQueue(
-    region: string,
+    region: Region,
     queue: QueueType,
   ): Promise<LeagueList> {
     return this.client.executeGet<LeagueList>(region, MASTER_LEAGUE_BY_QUEUE, [

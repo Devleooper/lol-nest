@@ -3,6 +3,7 @@ import { KeyValue } from './../../common/types';
 import { REGION_PLACEHOLDER } from './../../constants/http.constants';
 import { ApiProvider } from '../api-provider';
 import { map } from 'rxjs/operators';
+import { Region } from './../../common/enums';
 
 @Injectable()
 export class ApiClient {
@@ -17,7 +18,7 @@ export class ApiClient {
      * @param queries query parameters of the request
      * @returns the response body of type <T>
      */
-    public executeGet<T>(region: string, location: string, paths: KeyValue[] = [], queries: KeyValue[] = []): Promise<T> {
+    public executeGet<T>(region: Region, location: string, paths: KeyValue[] = [], queries: KeyValue[] = []): Promise<T> {
         const url = this.buildUrl(region, location, paths);
 
         return this.httpService.get<T>(url, { params: queries, headers: this.provider.getAuthHeaders() })
@@ -32,8 +33,8 @@ export class ApiClient {
      * @param pathParams - path paramateres to replace
      * @returns a string url containing the base url , location and resolved path params
      */
-    private buildUrl(region: string, location: string, pathParams: KeyValue[] | []): string {
-        const baseUrl = this.provider.getUrl().replace(REGION_PLACEHOLDER, region);
+    private buildUrl(region: Region, location: string, pathParams: KeyValue[] | []): string {
+        const baseUrl = this.provider.getUrl().replace(REGION_PLACEHOLDER, region.toString());
 
         let finalLocation: string;
 

@@ -6,6 +6,7 @@ import {
   MASTERY_BY_ENCRYPTED_SUMMONER_ID_AND_CHAMPION_ID,
   MASTERY_SCORE_BY_ENCRYPTED_SUMMONER_ID,
 } from './routes';
+import { Region } from './../../common/enums';
 
 @Injectable()
 export class MasteryService {
@@ -18,7 +19,7 @@ export class MasteryService {
    * @returns a list of ChampionMastery objects , sorted by mumber of champion points descending
    */
   public getChampionMasteriesByEncryptedSummonerId(
-    region: string,
+    region: Region,
     encryptedSummonerId: string,
   ): Promise<ChampionMastery[]> {
     return this.client.executeGet<ChampionMastery[]>(
@@ -36,7 +37,7 @@ export class MasteryService {
    * @returns a ChampionMastery object with the detail of the mastery.
    */
   public getChampionMastery(
-    region: string,
+    region: Region,
     encryptedSummonerId: string,
     championId: string,
   ): Promise<ChampionMastery> {
@@ -57,7 +58,7 @@ export class MasteryService {
    * @returns a number with the mastery score
    */
   public getMasteryScore(
-    region: string,
+    region: Region,
     encryptedSummonerId: string,
   ): Promise<number> {
     return this.client.executeGet<number>(

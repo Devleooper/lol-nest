@@ -8,6 +8,7 @@ import {
   MATCH_BY_MATCH_ID_AND_TOURNAMENT_CODE,
   MATCH_TIMELINE_BY_MATCH_ID,
 } from './routes';
+import { Region } from './../../common/enums';
 
 @Injectable()
 export class MatchService {
@@ -19,7 +20,7 @@ export class MatchService {
    * @param matchId -  the id of the match
    * @returns a Match object with all the match information
    */
-  public getMatchById(region: string, matchId: number): Promise<Match> {
+  public getMatchById(region: Region, matchId: number): Promise<Match> {
     return this.client.executeGet<Match>(region, MATCH_BY_ID, [
       { key: 'matchId', value: matchId.toString() },
     ]);
@@ -39,7 +40,7 @@ export class MatchService {
    * @returns a MatchList object with the summoner last matches
    */
   public getMatchListHistory(
-    region: string,
+    region: Region,
     encryptedAccountId: string,
     queries: KeyValue[],
   ): Promise<MatchList> {
@@ -58,7 +59,7 @@ export class MatchService {
    * @returns a MatchTimeline object with all the events that happened on the match
    */
   public getMatchTimeline(
-    region: string,
+    region: Region,
     matchId: number,
   ): Promise<MatchTimeline> {
     return this.client.executeGet<MatchTimeline>(
@@ -75,7 +76,7 @@ export class MatchService {
    * @returns a List of MatchIds
    */
   public getMatchIdsByTournamentCode(
-    region: string,
+    region: Region,
     tournamentCode: string,
   ): Promise<number[]> {
     return this.client.executeGet<number[]>(
@@ -93,7 +94,7 @@ export class MatchService {
    * @returns a Match object with all the match details
    */
   public getMatchByIdAndTournamentCode(
-    region: string,
+    region: Region,
     tournamentCode: string,
     matchId: number,
   ): Promise<Match> {

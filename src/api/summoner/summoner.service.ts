@@ -7,6 +7,7 @@ import {
   SUMMONER_BY_PUUID,
   SUMMONER_BY_ENCRYPTED_SUMMONER_ID,
 } from './routes';
+import { Region } from './../../common/enums';
 
 @Injectable()
 export class SummonerService {
@@ -19,7 +20,7 @@ export class SummonerService {
    * @returns a Summoner object
    */
   public getSummonerByEncryptedAccountId(
-    region: string,
+    region: Region,
     encryptedAccountId: string,
   ): Promise<Summoner> {
     return this.client.executeGet<Summoner>(region, SUMMONER_BY_ACCOUNT_ID, [
@@ -34,7 +35,7 @@ export class SummonerService {
    * @returns a Summoner object
    */
   public getSummonerByName(
-    region: string,
+    region: Region,
     summonerName: string,
   ): Promise<Summoner> {
     return this.client.executeGet<Summoner>(region, SUMMONER_BY_NAME, [
@@ -48,7 +49,7 @@ export class SummonerService {
    * @param puuid - the name of the player
    * @returns a Summoner object
    */
-  public getSummonerByPUUID(region: string, puuid: string): Promise<Summoner> {
+  public getSummonerByPUUID(region: Region, puuid: string): Promise<Summoner> {
     return this.client.executeGet<Summoner>(region, SUMMONER_BY_PUUID, [
       { key: 'encryptedPUUID', value: puuid },
     ]);
@@ -61,7 +62,7 @@ export class SummonerService {
    * @returns a Summoner object
    */
   public getSummonerByEncryptedSummonerId(
-    region: string,
+    region: Region,
     encryptedSummonerId: string,
   ): Promise<Summoner> {
     return this.client.executeGet<Summoner>(
