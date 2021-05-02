@@ -3,8 +3,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ApiProvider } from '../api-provider';
 import { ApiClient } from './api-client';
 import { AxiosResponse } from 'axios';
-import { of } from 'rxjs';
-import { Summoner } from './../../common/types';
+import { of, throwError } from 'rxjs';
+import { ApiException, Summoner } from './../../common/types';
 import { Region } from './../../common/enums';
 import { delay } from 'rxjs/operators';
 
@@ -78,5 +78,35 @@ describe('ApiClient', () => {
     expect(httpSpy).toHaveBeenCalledTimes(1);
     expect(urlSpy).toHaveBeenCalledTimes(1);
     expect(headersSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should get an ApiException with status different than 200', async () => {
+    const errorResponse = {
+      response: {
+        data: {
+          status: {
+            message: 'Bad Request - Exception decrypting asdasd',
+            status_code: 400,
+          },
+        },
+        status: 400,
+      },
+      message: 'Error Calling /summoner/asdasd , Status 400',
+      config: {},
+    };
+
+    const httpSpy = jest
+      .spyOn(mockHttp, 'get')
+      .mockImplementationOnce(() =>
+        throwError(errorResponse).pipe(delay(2000)),
+      );
+
+    try {
+      await provider.executeGet(Region.LAN, '/summoner/asdasd');
+    } catch (error) {
+      expect(httpSpy).toHaveBeenCalledTimes(1);
+      expect(error.status).toEqual(errorResponse.response.status);
+      expect(error.message).toEqual(errorResponse.message);
+    }
   });
 });

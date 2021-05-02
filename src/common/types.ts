@@ -1,5 +1,11 @@
 import { GameMode, GameType, Position, QueueType, Rank, Tier } from './enums';
 
+export interface ApiException {
+  status: number;
+  errorBody?: any;
+  message: string;
+}
+
 export interface KeyValue {
   key: string;
   value: string;
