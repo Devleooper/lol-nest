@@ -6,17 +6,9 @@ import { ChampionInfo, KeyValue } from '../../common/types';
 import { ApiClient } from '../client/api-client';
 import { ChampionService } from './champion.service';
 import { CHAMPION_ROTATIONS } from './routes';
+import { ApiClientMock } from '../../test/common-mocks';
+import { testApiCall } from '../../test/common-api-test';
 
-class ApiClientMock {
-  executeGet(
-    region: Region,
-    location: string,
-    paths: KeyValue[] = [],
-    queries: KeyValue[] = [],
-  ) {
-    return of({});
-  }
-}
 describe('ChampionService', () => {
   let service: ChampionService;
   let apiClient: ApiClient;
@@ -38,19 +30,11 @@ describe('ChampionService', () => {
     expect(service).toBeDefined();
   });
 
-  it('should get champion rotations successfully', async () => {
-    const apiClientSpy = jest
-      .spyOn(apiClient, 'executeGet')
-      .mockImplementationOnce(
-        () =>
-          new Promise((resolve) =>
-            setTimeout(() => resolve(mocks[CHAMPION_ROTATIONS]), 2000),
-          ),
-      );
-
-    const result = await service.getChampionRotations(Region.LAN);
-
-    expect(apiClientSpy).toBeCalledWith(Region.LAN , CHAMPION_ROTATIONS);
-    expect(result).toBe(mocks[CHAMPION_ROTATIONS]);
+  it('should getChampionRotations successfully', async () => {
+    testApiCall(
+      CHAMPION_ROTATIONS,
+      apiClient,
+      async () => await service.getChampionRotations(Region.LAN),
+    );
   });
 });

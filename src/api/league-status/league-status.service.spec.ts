@@ -1,20 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { of } from 'rxjs';
-import { KeyValue } from '../../common/types';
-import { Region } from '../../common/enums';
 import { LeagueStatusService } from './league-status.service';
 import { ApiClient } from '../client/api-client';
+import { ApiClientMock } from '../../test/common-mocks';
 
-class ApiClientMock {
-  executeGet(
-    region: Region,
-    location: string,
-    paths: KeyValue[] = [],
-    queries: KeyValue[] = [],
-  ) {
-    return of({});
-  }
-}
 describe('LeagueStatusService', () => {
   let service: LeagueStatusService;
 
