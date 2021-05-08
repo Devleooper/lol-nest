@@ -3,7 +3,7 @@ import { ApiException, KeyValue } from './../../common/types';
 import { REGION_PLACEHOLDER } from './../../constants/http.constants';
 import { ApiProvider } from '../api-provider';
 import { catchError, map } from 'rxjs/operators';
-import { Region } from './../../common/enums';
+import { ContinentalRegion, Region } from './../../common/enums';
 import { of } from 'rxjs';
 import { isApiException, mapToApiException } from '../../common/utils';
 
@@ -16,14 +16,14 @@ export class ApiClient {
 
   /**
    * Executes a GET request to the Riot Games API
-   * @param  region - the region to execute the call
+   * @param  region - the region/continental-region to execute the call
    * @param location - the url path
    * @param paths path parameters of the request
    * @param queries query parameters of the request
    * @returns the response body of type <T>
    */
   public executeGet<T>(
-    region: Region,
+    region: Region | ContinentalRegion,
     location: string,
     paths: KeyValue[] = [],
     queries: KeyValue[] = [],
@@ -47,13 +47,13 @@ export class ApiClient {
 
   /**
    *  Builds a request url
-   * @param  region - the region to execute the call
+   * @param  region - the region/continental-region to execute the call
    * @param location - the url path
    * @param pathParams - path paramateres to replace
    * @returns a string url containing the base url , location and resolved path params
    */
   private buildUrl(
-    region: Region,
+    region: Region | ContinentalRegion,
     location: string,
     pathParams: KeyValue[] | [],
   ): string {

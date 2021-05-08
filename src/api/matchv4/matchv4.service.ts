@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { KeyValue, Match, MatchList, MatchTimeline } from './../../common/types';
+import { KeyValue, Match, MatchList, MatchTimeline } from '../../common/types';
 import { ApiClient } from '../client/api-client';
 import {
   MATCHES_BY_ENCRYPTED_ACCOUNT_ID,
@@ -8,10 +8,10 @@ import {
   MATCH_BY_MATCH_ID_AND_TOURNAMENT_CODE,
   MATCH_TIMELINE_BY_MATCH_ID,
 } from './routes';
-import { Region } from './../../common/enums';
+import { Region } from '../../common/enums';
 
 @Injectable()
-export class MatchService {
+export class MatchV4Service {
   constructor(private readonly client: ApiClient) {}
 
   /**

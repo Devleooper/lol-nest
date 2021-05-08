@@ -180,7 +180,7 @@ export interface Match {
   teams: TeamStats[];
   platformId: string;
   gameCreation: number;
-  seasonId: number;
+  seasonId?: number;
   gameVersion: string;
   mapId: number;
   gameMode: GameMode;
@@ -234,8 +234,10 @@ export interface Participant {
   stats: ParticipantStats;
   teamId: number;
   timeline: ParticipantTimeline;
-  spell1Id: number;
-  spell2Id: number;
+  spell1Id?: number;
+  spell2Id?: number;
+  summoner1Id?: number;
+  summoner2Id?: number;
   highestAchievedSeasonTier: string;
   masteries: Mastery[];
 }

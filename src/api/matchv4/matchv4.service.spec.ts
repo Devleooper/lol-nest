@@ -1,22 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ApiClient } from '../client/api-client';
-import { LeagueService } from './league.service';
 import { ApiClientMock } from '../../test/common-mocks';
-describe('LeagueService', () => {
-  let service: LeagueService;
-  let apiClient: ApiClient;
+import { ApiClient } from '../client/api-client';
+import { MatchV4Service } from './matchv4.service';
+
+describe('MatchService', () => {
+  let service: MatchV4Service;
 
   beforeEach(async () => {
     const apiClientProvider = {
       provide: ApiClient,
       useClass: ApiClientMock,
     };
+
     const module: TestingModule = await Test.createTestingModule({
-      providers: [LeagueService , apiClientProvider],
+      providers: [MatchV4Service, apiClientProvider],
     }).compile();
 
-    service = module.get<LeagueService>(LeagueService);
-    apiClient = module.get<ApiClient>(ApiClient);
+    service = module.get<MatchV4Service>(MatchV4Service);
   });
 
   it('should be defined', () => {
