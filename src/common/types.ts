@@ -8,7 +8,7 @@ export interface ApiException {
 
 export interface KeyValue {
   key: string;
-  value: string;
+  value: any;
 }
 
 export interface Summoner {
@@ -169,6 +169,17 @@ export interface MatchReference {
   timestamp: number;
   role: string;
   lane: string;
+}
+
+export interface Record<T> {
+  metadata: Metadata;
+  info: T;
+}
+
+export interface Metadata {
+  dataVersion: string;
+  matchId: string;
+  participatns: string[];
 }
 
 export interface Match {
@@ -375,6 +386,13 @@ export interface Mastery {
 export interface MatchTimeline {
   frames: MatchFrame[];
   frameInterval: number;
+  gameId?: number;
+  participants?: TimelineParticipant[];
+}
+
+export interface TimelineParticipant {
+  participantId: number;
+  puuid: string;
 }
 
 export interface MatchFrame {

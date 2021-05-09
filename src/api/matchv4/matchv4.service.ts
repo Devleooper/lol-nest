@@ -31,8 +31,8 @@ export class MatchV4Service {
    * @param region  - the region to execute the call
    * @param encryptedAccountId - the encryptedAccountId n of the summoner
    * @param queries - some custom queries you can send , like the following :
-   *  - champion -> a championId to filter on
-   *  - queue -> a queueType to filter on
+   *  - champion -> a set of champion IDs to filter on
+   *  - queue -> a set queue IDs to filter on
    *  - endTime -> a timestamp to filter on
    *  - beginTime ->  a timestamp to filter on
    *  - endIndex -> the endIndex for the Matches list (default 100)
