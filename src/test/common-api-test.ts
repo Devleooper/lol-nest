@@ -6,12 +6,15 @@ export const testApiCall = async (
   apiClient: ApiClient,
   serviceCallFunction: () => Promise<any>,
 ) => {
-    jest.useFakeTimers();
+  jest.useRealTimers();
 
   const apiClientSpy = jest
     .spyOn(apiClient, 'executeGet')
     .mockImplementationOnce(
-      () => new Promise((resolve) => setTimeout(() => resolve(mocks[location]) , 2000)),
+      () =>
+        new Promise((resolve) =>
+          setTimeout(() => resolve(mocks[location]), 2000),
+        ),
     );
 
   const result = await serviceCallFunction();

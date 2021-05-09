@@ -35,7 +35,7 @@ describe('ClashService', () => {
   });
 
   it('should getClashPlayersBySummonerId successfully', async () => {
-    testApiCall(
+    await testApiCall(
       PLAYERS_BY_SUMMONER_ID,
       apiClient,
       async () =>
@@ -47,7 +47,7 @@ describe('ClashService', () => {
   });
 
   it('should getTeamById successfully', async () => {
-    testApiCall(
+    await testApiCall(
       TEAM_BY_ID,
       apiClient,
       async () => await service.getTeamById(Region.NA, 'example-team-id'),
@@ -55,7 +55,7 @@ describe('ClashService', () => {
   });
 
   it('should getTournaments successfully', async () => {
-    testApiCall(
+    await testApiCall(
       TOURNAMENTS,
       apiClient,
       async () => await service.getTournaments(Region.EUW),
@@ -63,7 +63,7 @@ describe('ClashService', () => {
   });
 
   it('should getTournamentByTeamId successfully', async () => {
-    testApiCall(
+    await testApiCall(
       TOURNAMENT_BY_TEAM_ID,
       apiClient,
       async () =>
@@ -72,7 +72,7 @@ describe('ClashService', () => {
   });
 
   it('should getTournamentById successfully', async () => {
-    testApiCall(
+    await testApiCall(
       TOURNAMENT_BY_ID,
       apiClient,
       async () =>

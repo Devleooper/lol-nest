@@ -1,8 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { of } from 'rxjs';
-import { mocks } from '../../test/api-mocks';
 import { Region } from '../../common/enums';
-import { ChampionInfo, KeyValue } from '../../common/types';
 import { ApiClient } from '../client/api-client';
 import { ChampionService } from './champion.service';
 import { CHAMPION_ROTATIONS } from './routes';
@@ -31,7 +28,7 @@ describe('ChampionService', () => {
   });
 
   it('should getChampionRotations successfully', async () => {
-    testApiCall(
+    await testApiCall(
       CHAMPION_ROTATIONS,
       apiClient,
       async () => await service.getChampionRotations(Region.LAN),
