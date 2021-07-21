@@ -74,3 +74,9 @@ export enum Region {
     TR = 'TR1',
     RU = 'RU'
 }
+
+export enum ContinentalRegion {
+    AMERICAS = 'americas',
+    ASIA = 'asia',
+    EUROPE = 'europe'
+}

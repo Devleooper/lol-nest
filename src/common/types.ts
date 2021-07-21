@@ -1,8 +1,14 @@
 import { GameMode, GameType, Position, QueueType, Rank, Tier } from './enums';
 
+export interface ApiException {
+  status: number;
+  errorBody?: any;
+  message: string;
+}
+
 export interface KeyValue {
   key: string;
-  value: string;
+  value: any;
 }
 
 export interface Summoner {
@@ -165,6 +171,17 @@ export interface MatchReference {
   lane: string;
 }
 
+export interface Record<T> {
+  metadata: Metadata;
+  info: T;
+}
+
+export interface Metadata {
+  dataVersion: string;
+  matchId: string;
+  participatns: string[];
+}
+
 export interface Match {
   gameId: number;
   participantIdentities: ParticipantIdentity[];
@@ -174,7 +191,7 @@ export interface Match {
   teams: TeamStats[];
   platformId: string;
   gameCreation: number;
-  seasonId: number;
+  seasonId?: number;
   gameVersion: string;
   mapId: number;
   gameMode: GameMode;
@@ -228,8 +245,10 @@ export interface Participant {
   stats: ParticipantStats;
   teamId: number;
   timeline: ParticipantTimeline;
-  spell1Id: number;
-  spell2Id: number;
+  spell1Id?: number;
+  spell2Id?: number;
+  summoner1Id?: number;
+  summoner2Id?: number;
   highestAchievedSeasonTier: string;
   masteries: Mastery[];
 }
@@ -367,6 +386,13 @@ export interface Mastery {
 export interface MatchTimeline {
   frames: MatchFrame[];
   frameInterval: number;
+  gameId?: number;
+  participants?: TimelineParticipant[];
+}
+
+export interface TimelineParticipant {
+  participantId: number;
+  puuid: string;
 }
 
 export interface MatchFrame {

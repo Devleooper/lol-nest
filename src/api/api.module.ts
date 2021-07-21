@@ -7,32 +7,34 @@ import { ChampionService } from './champion/champion.service';
 import { ClashService } from './clash/clash.service';
 import { LeagueService } from './league/league.service';
 import { LeagueStatusService } from './league-status/league-status.service';
-import { MatchService } from './match/match.service';
+import { MatchV4Service } from './matchv4/matchv4.service';
+import { MatchV5Service } from './matchv5/matchv5.service';
 import { SpectatorService } from './spectator/spectator.service';
 
 @Module({
-    imports: [HttpModule],
-    providers: [
-        ApiProvider,
-        ApiClient,
-        SummonerService,
-        MasteryService,
-        ChampionService,
-        ClashService,
-        LeagueService,
-        LeagueStatusService,
-        MatchService,
-        SpectatorService
-    ],
-    exports: [
-        SummonerService,
-        MasteryService,
-        ChampionService,
-        ClashService,
-        LeagueService,
-        LeagueStatusService,
-        MatchService,
-        SpectatorService
-    ]
+  imports: [HttpModule],
+  providers: [
+    ApiProvider,
+    ApiClient,
+    SummonerService,
+    MasteryService,
+    ChampionService,
+    ClashService,
+    LeagueService,
+    LeagueStatusService,
+    MatchV4Service,
+    MatchV5Service,
+    SpectatorService,
+  ],
+  exports: [
+    SummonerService,
+    MasteryService,
+    ChampionService,
+    ClashService,
+    LeagueService,
+    LeagueStatusService,
+    MatchV4Service,
+    SpectatorService,
+  ],
 })
-export class ApiModule { }
+export class ApiModule {}

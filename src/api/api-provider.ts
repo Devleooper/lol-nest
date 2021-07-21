@@ -20,12 +20,11 @@ export class ApiProvider {
     }
 
     public getAuthHeaders(): any {
-        let headers = {};
+        const headers = {};
 
         headers[API_KEY_HEADER] = this.apikey;
 
         return headers;
-
     }
 
 }
