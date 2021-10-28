@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ContinentalRegion } from 'src/common/enums';
+import { ContinentalRegion } from '../../common/enums';
 import { Match, Record, MatchTimeline } from '../../common/types';
 import { ApiClient } from '../client/api-client';
 import {
