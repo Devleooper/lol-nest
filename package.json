@@ -1,7 +1,7 @@
 {
   "name": "@codingleoo/lol-nest",
   "version": "1.0.0",
-  "description": "NestJS npm package starter",
+  "description": "Library for League Of Legends API integrations",
   "author": "Leonardo Ruiz <leonardo.ruizsua@gmail.com>",
   "license": "MIT",
   "readmeFilename": "README.md",
