@@ -34,6 +34,7 @@ import { SpectatorService } from './spectator/spectator.service';
     LeagueService,
     LeagueStatusService,
     MatchV4Service,
+    MatchV5Service,
     SpectatorService,
   ],
 })
