@@ -382,52 +382,164 @@ export const mocks = {
     maintenances: [],
     incidents: [],
   },
-  '/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}': [
+  '/lol/champion-mastery/v4/champion-masteries/by-puuid/{encryptedPUUID}': [
     {
-      championId: 126,
-      championLevel: 7,
-      championPoints: 435136,
-      lastPlayTime: 1619380409000,
-      championPointsSinceLastLevel: 413536,
-      championPointsUntilNextLevel: 0,
-      chestGranted: true,
-      tokensEarned: 0,
-      summonerId: '9rW6cwmmzw48qIyHM2JHFzVF1MWcLBsgg8kNXfplI-0lTPQ',
+        "puuid": "I2j4TGlu5AOqrLGNUgXOrhzDxPAla4oqAlF9fHRvIkaHSA24r7heUyJZUJ6YU1fkylzjeGbIsLOaFA",
+        "championId": 555,
+        "championLevel": 51,
+        "championPoints": 571701,
+        "lastPlayTime": 1724639180000,
+        "championPointsSinceLastLevel": 45101,
+        "championPointsUntilNextLevel": -34101,
+        "markRequiredForNextLevel": 2,
+        "tokensEarned": 0,
+        "championSeasonMilestone": 3,
+        "milestoneGrades": [
+            "B-",
+            "B-",
+            "S",
+            "A-"
+        ],
+        "nextSeasonMilestone": {
+            "requireGradeCounts": {
+                "S-": 1,
+                "C-": 4
+            },
+            "rewardMarks": 2,
+            "bonus": false,
+            "totalGamesRequires": 5
+        }
     },
     {
-      championId: 145,
-      championLevel: 7,
-      championPoints: 373057,
-      lastPlayTime: 1616969610000,
-      championPointsSinceLastLevel: 351457,
-      championPointsUntilNextLevel: 0,
-      chestGranted: true,
-      tokensEarned: 0,
-      summonerId: '9rW6cwmmzw48qIyHM2JHFzVF1MWcLBsgg8kNXfplI-0lTPQ',
+        "puuid": "I2j4TGlu5AOqrLGNUgXOrhzDxPAla4oqAlF9fHRvIkaHSA24r7heUyJZUJ6YU1fkylzjeGbIsLOaFA",
+        "championId": 55,
+        "championLevel": 49,
+        "championPoints": 560366,
+        "lastPlayTime": 1720483369000,
+        "championPointsSinceLastLevel": 55766,
+        "championPointsUntilNextLevel": -44766,
+        "markRequiredForNextLevel": 2,
+        "tokensEarned": 1,
+        "championSeasonMilestone": 1,
+        "milestoneGrades": [],
+        "nextSeasonMilestone": {
+            "requireGradeCounts": {
+                "A-": 1,
+                "C-": 4
+            },
+            "rewardMarks": 1,
+            "bonus": false,
+            "totalGamesRequires": 5
+        }
+    }
+],
+  '/lol/champion-mastery/v4/champion-masteries/by-puuid/{encryptedPUUID}/by-champion/{championId}': {
+    "puuid": "I2j4TGlu5AOqrLGNUgXOrhzDxPAla4oqAlF9fHRvIkaHSA24r7heUyJZUJ6YU1fkylzjeGbIsLOaFA",
+    "championId": 555,
+    "championLevel": 51,
+    "championPoints": 571701,
+    "lastPlayTime": 1724639180000,
+    "championPointsSinceLastLevel": 45101,
+    "championPointsUntilNextLevel": -34101,
+    "markRequiredForNextLevel": 2,
+    "tokensEarned": 0,
+    "championSeasonMilestone": 3,
+    "milestoneGrades": [
+        "B-",
+        "B-",
+        "S",
+        "A-"
+    ],
+    "nextSeasonMilestone": {
+        "requireGradeCounts": {
+            "S-": 1,
+            "C-": 4
+        },
+        "rewardMarks": 2,
+        "bonus": false,
+        "totalGamesRequires": 5
+    }
+},
+  '/lol/champion-mastery/v4/champion-masteries/by-puuid/{encryptedPUUID}/top':[
+    {
+        "puuid": "I2j4TGlu5AOqrLGNUgXOrhzDxPAla4oqAlF9fHRvIkaHSA24r7heUyJZUJ6YU1fkylzjeGbIsLOaFA",
+        "championId": 555,
+        "championLevel": 51,
+        "championPoints": 571701,
+        "lastPlayTime": 1724639180000,
+        "championPointsSinceLastLevel": 45101,
+        "championPointsUntilNextLevel": -34101,
+        "markRequiredForNextLevel": 2,
+        "tokensEarned": 0,
+        "championSeasonMilestone": 3,
+        "milestoneGrades": [
+            "B-",
+            "B-",
+            "S",
+            "A-"
+        ],
+        "nextSeasonMilestone": {
+            "requireGradeCounts": {
+                "S-": 1,
+                "C-": 4
+            },
+            "rewardMarks": 2,
+            "bonus": false,
+            "totalGamesRequires": 5
+        }
     },
     {
-      championId: 86,
-      championLevel: 7,
-      championPoints: 308295,
-      lastPlayTime: 1619980206000,
-      championPointsSinceLastLevel: 286695,
-      championPointsUntilNextLevel: 0,
-      chestGranted: true,
-      tokensEarned: 0,
-      summonerId: '9rW6cwmmzw48qIyHM2JHFzVF1MWcLBsgg8kNXfplI-0lTPQ',
+        "puuid": "I2j4TGlu5AOqrLGNUgXOrhzDxPAla4oqAlF9fHRvIkaHSA24r7heUyJZUJ6YU1fkylzjeGbIsLOaFA",
+        "championId": 55,
+        "championLevel": 49,
+        "championPoints": 560366,
+        "lastPlayTime": 1720483369000,
+        "championPointsSinceLastLevel": 55766,
+        "championPointsUntilNextLevel": -44766,
+        "markRequiredForNextLevel": 2,
+        "tokensEarned": 1,
+        "championSeasonMilestone": 1,
+        "milestoneGrades": [],
+        "nextSeasonMilestone": {
+            "requireGradeCounts": {
+                "A-": 1,
+                "C-": 4
+            },
+            "rewardMarks": 1,
+            "bonus": false,
+            "totalGamesRequires": 5
+        }
     },
-  ],
-  '/lol/champion-mastery/v4/champion-masteries/by-summoner/{encryptedSummonerId}/by-champion/{championId}': {
-    championId: 126,
-    championLevel: 7,
-    championPoints: 435136,
-    lastPlayTime: 1619380409000,
-    championPointsSinceLastLevel: 413536,
-    championPointsUntilNextLevel: 0,
-    chestGranted: true,
-    tokensEarned: 0,
-    summonerId: '9rW6cwmmzw48qIyHM2JHFzVF1MWcLBsgg8kNXfplI-0lTPQ',
-  },
+    {
+        "puuid": "I2j4TGlu5AOqrLGNUgXOrhzDxPAla4oqAlF9fHRvIkaHSA24r7heUyJZUJ6YU1fkylzjeGbIsLOaFA",
+        "championId": 245,
+        "championLevel": 20,
+        "championPoints": 238545,
+        "lastPlayTime": 1715818703000,
+        "championPointsSinceLastLevel": 52945,
+        "championPointsUntilNextLevel": -41945,
+        "markRequiredForNextLevel": 2,
+        "tokensEarned": 0,
+        "championSeasonMilestone": 0,
+        "milestoneGrades": [
+            "A-"
+        ],
+        "nextSeasonMilestone": {
+            "requireGradeCounts": {
+                "B-": 1,
+                "C-": 4
+            },
+            "rewardMarks": 1,
+            "bonus": false,
+            "rewardConfig": {
+                "rewardValue": "5f4333db-e90d-4705-903b-08dbf5e61006",
+                "rewardType": "HEXTECH_CHEST",
+                "maximumReward": 6
+            },
+            "totalGamesRequires": 5
+        }
+    }
+],
   '/lol/champion-mastery/v4/scores/by-summoner/{encryptedSummonerId}': 442,
   '/lol/match/v4/matches/{matchId}': {
     gameId: 1071008069,
