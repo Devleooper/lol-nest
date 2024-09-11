@@ -5,9 +5,9 @@ import { ApiClientMock } from '../../test/common-mocks';
 import { ApiClient } from '../client/api-client';
 import { MasteryService } from './mastery.service';
 import {
-  MASTERY_BY_ENCRYPTED_SUMMONER_ID,
-  MASTERY_BY_ENCRYPTED_SUMMONER_ID_AND_CHAMPION_ID,
-  MASTERY_SCORE_BY_ENCRYPTED_SUMMONER_ID,
+  MASTERY_BY_ENCRYPTED_PUUID,
+  MASTERY_BY_ENCRYPTED_PUUID_AND_CHAMPION_ID,
+  MASTERY_SCORE_BY_ENCRYPTED_PUUID,
 } from './routes';
 
 describe('MasteryService', () => {
@@ -34,7 +34,7 @@ describe('MasteryService', () => {
 
   it('should getChampionMasteries successfully', async () => {
     await testApiCall(
-      MASTERY_BY_ENCRYPTED_SUMMONER_ID,
+      MASTERY_BY_ENCRYPTED_PUUID,
       apiClient,
       async () =>
         await service.getChampionMasteriesByEncryptedSummonerId(
@@ -46,7 +46,7 @@ describe('MasteryService', () => {
 
   it('should getChampionMastery successfully', async () => {
     await testApiCall(
-      MASTERY_BY_ENCRYPTED_SUMMONER_ID_AND_CHAMPION_ID,
+      MASTERY_BY_ENCRYPTED_PUUID_AND_CHAMPION_ID,
       apiClient,
       async () =>
         await service.getChampionMastery(
@@ -59,7 +59,7 @@ describe('MasteryService', () => {
 
   it('should getMasteryScore successfully', async () => {
     await testApiCall(
-      MASTERY_SCORE_BY_ENCRYPTED_SUMMONER_ID,
+      MASTERY_SCORE_BY_ENCRYPTED_PUUID,
       apiClient,
       async () =>
         await service.getMasteryScore(

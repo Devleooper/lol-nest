@@ -11,6 +11,12 @@ export interface KeyValue {
   value: any;
 }
 
+export interface Account {
+  puuid: string;
+  gameName: string;
+  tagLine: string;
+}
+
 export interface Summoner {
   accountId: string;
   profileIconId: number;
@@ -22,12 +28,12 @@ export interface Summoner {
 }
 
 export interface ChampionMastery {
+  puuid: string;
   championPointsUntilNextLevel: number;
   chestGranted: boolean;
   championId: number;
   lastPlayTime: number;
   championLevel: number;
-  summonerId: string;
   championPoints: number;
   championPointsSinceLastLevel: number;
   tokensEarned: number;

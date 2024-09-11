@@ -1,6 +1,6 @@
 {
   "name": "@devleooper/lol-nest",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Library for League Of Legends API integrations",
   "author": "Leonardo Ruiz <leonardo.ruizsua@gmail.com>",
   "license": "MIT",
