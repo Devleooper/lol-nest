@@ -9,9 +9,11 @@ import { LeagueService } from './league/league.service';
 import { LeagueStatusService } from './league-status/league-status.service';
 import { MatchV5Service } from './matchv5/matchv5.service';
 import { SpectatorService } from './spectator/spectator.service';
+import { AccountService } from './account/account.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [HttpModule],
+  imports: [HttpModule, ConfigModule],
   providers: [
     ApiProvider,
     ApiClient,
@@ -23,8 +25,10 @@ import { SpectatorService } from './spectator/spectator.service';
     LeagueStatusService,
     MatchV5Service,
     SpectatorService,
+    AccountService,
   ],
   exports: [
+    AccountService,
     SummonerService,
     MasteryService,
     ChampionService,
@@ -35,4 +39,4 @@ import { SpectatorService } from './spectator/spectator.service';
     SpectatorService,
   ],
 })
-export class ApiModule {}
+export class RiotApiModule {}

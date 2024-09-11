@@ -55,14 +55,15 @@ export class MasteryService {
   public getTopMasteries(
     region: Region,
     encryptedPuuid: string,
-    count: number) : Promise<ChampionMastery[]> {
-      return this.client.executeGet<ChampionMastery[]>(
-        region,
-        MASTERY_TOP_BY_ENCRYPTED_PUUID,
-        [{ key: 'encryptedPUUID', value: encryptedPuuid }],
-        [{ key: 'count', value: count.toString() }]
-      );
-    }
+    count: number,
+  ): Promise<ChampionMastery[]> {
+    return this.client.executeGet<ChampionMastery[]>(
+      region,
+      MASTERY_TOP_BY_ENCRYPTED_PUUID,
+      [{ key: 'encryptedPUUID', value: encryptedPuuid }],
+      [{ key: 'count', value: count.toString() }],
+    );
+  }
 
   /**
    * Gets the mastery score of a player

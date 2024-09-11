@@ -33,7 +33,7 @@ export class ApiClient {
     return this.httpService
       .get<T>(url, { params: queries, headers: this.provider.getAuthHeaders() })
       .pipe(
-        map((response) => response.data),
+        map(response => response.data),
         catchError((error: any) => {
           return of(mapToApiException(error));
         }),
@@ -61,10 +61,10 @@ export class ApiClient {
       .getUrl()
       .replace(REGION_PLACEHOLDER, region.toString());
 
-    let finalLocation: string;
+    let finalLocation = location;
 
     pathParams.forEach((path: KeyValue) => {
-      finalLocation = location.replace(`{${path.key}}`, path.value);
+      finalLocation = finalLocation.replace(`{${path.key}}`, path.value);
     });
 
     return baseUrl + finalLocation;

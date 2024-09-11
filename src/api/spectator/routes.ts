@@ -1,5 +1,6 @@
 /**
- * Spectator V4 Constants
+ * Spectator V5 Constants
  */
-export const ACTIVE_GAME_BY_ENCRYPTED_SUMMONER_ID = '/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}';
-export const FEATURED_GAMES = '/lol/spectator/v4/featured-games';
+export const ACTIVE_GAME_BY_ENCRYPTED_PUUID =
+  '/lol/spectator/v5/active-games/by-summoner/{encryptedPUUID}';
+export const FEATURED_GAMES = '/lol/spectator/v5/featured-games';

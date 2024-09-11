@@ -3,7 +3,7 @@ import { Region } from '../../common/enums';
 import { testApiCall } from '../../test/common-api-test';
 import { ApiClientMock } from '../../test/common-mocks';
 import { ApiClient } from '../client/api-client';
-import { ACTIVE_GAME_BY_ENCRYPTED_SUMMONER_ID, FEATURED_GAMES } from './routes';
+import { ACTIVE_GAME_BY_ENCRYPTED_PUUID, FEATURED_GAMES } from './routes';
 import { SpectatorService } from './spectator.service';
 
 describe('SpectatorService', () => {
@@ -28,12 +28,12 @@ describe('SpectatorService', () => {
     expect(service).toBeDefined();
   });
 
-  it('should getCurrentGameBySumoner successfully', async () => {
+  it('should getCurrentGameByPUUID successfully', async () => {
     await testApiCall(
-      ACTIVE_GAME_BY_ENCRYPTED_SUMMONER_ID,
+      ACTIVE_GAME_BY_ENCRYPTED_PUUID,
       apiClient,
       async () =>
-        await service.getActiveGameByEncryptedSummonerId(
+        await service.getActiveGameByEncryptedPUUID(
           Region.LAN,
           'SDV7JC8fkb6c5PSoCRTINC_vMjrKY6iI1Bz9Z8lh-yBrUAQ',
         ),

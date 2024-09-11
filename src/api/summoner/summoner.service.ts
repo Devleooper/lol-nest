@@ -3,7 +3,6 @@ import { ApiClient } from './../client/api-client';
 import { Summoner } from './../../common/types';
 import {
   SUMMONER_BY_ACCOUNT_ID,
-  SUMMONER_BY_NAME,
   SUMMONER_BY_PUUID,
   SUMMONER_BY_ENCRYPTED_SUMMONER_ID,
 } from './routes';
@@ -25,21 +24,6 @@ export class SummonerService {
   ): Promise<Summoner> {
     return this.client.executeGet<Summoner>(region, SUMMONER_BY_ACCOUNT_ID, [
       { key: 'encryptedAccountId', value: encryptedAccountId },
-    ]);
-  }
-
-  /**
-   * retrieves the summoner by the summonerName
-   * @param region - the region to execute the call
-   * @param summonerName - the name of the player
-   * @returns a Summoner object
-   */
-  public getSummonerByName(
-    region: Region,
-    summonerName: string,
-  ): Promise<Summoner> {
-    return this.client.executeGet<Summoner>(region, SUMMONER_BY_NAME, [
-      { key: 'summonerName', value: summonerName },
     ]);
   }
 

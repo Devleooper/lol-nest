@@ -46,14 +46,14 @@ describe('ApiProvider', () => {
     expect(configServiceSpy).toHaveBeenCalledWith(RIOT_API_URL);
   });
 
-
-  it('should get expected values from service' , () => {
+  it('should get expected values from service', () => {
     expect(provider.getUrl()).toEqual(configServiceMock.get(RIOT_API_URL));
-    expect(provider.getAuthHeaders()).toEqual({'X-Riot-Token': configServiceMock.get(RIOT_API_KEY)});
-  })
+    expect(provider.getAuthHeaders()).toEqual({
+      'X-Riot-Token': configServiceMock.get(RIOT_API_KEY),
+    });
+  });
 
   afterEach(() => {
     configServiceSpy.mockClear();
   });
-
 });

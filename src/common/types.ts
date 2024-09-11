@@ -11,6 +11,12 @@ export interface KeyValue {
   value: any;
 }
 
+export interface Account {
+  puuid: string;
+  gameName: string;
+  tagLine: string;
+}
+
 export interface Summoner {
   accountId: string;
   profileIconId: number;

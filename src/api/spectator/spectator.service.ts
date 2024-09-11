@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable } from '@nestjs/common';
 import { CurrentGameInfo, FeaturedGames } from './../../common/types';
 import { ApiClient } from '../client/api-client';
-import { ACTIVE_GAME_BY_ENCRYPTED_SUMMONER_ID, FEATURED_GAMES } from './routes';
+import { ACTIVE_GAME_BY_ENCRYPTED_PUUID, FEATURED_GAMES } from './routes';
 import { Region } from './../../common/enums';
 
 @Injectable()
@@ -11,17 +11,17 @@ export class SpectatorService {
   /**
    * Get an active game for a summoner
    * @param region - the region to execute the call
-   * @param encryptedSummonerId - the encryptedSummonerId of the player
+   * @param encryptedPUUID - the encryptedPUUID of the player
    * @returns a CurrentGameInfo object with the current game information
    */
-  public getActiveGameByEncryptedSummonerId(
+  public getActiveGameByEncryptedPUUID(
     region: Region,
-    encryptedSummonerId: string,
+    encryptedPUUID: string,
   ): Promise<CurrentGameInfo> {
     return this.client.executeGet<CurrentGameInfo>(
       region,
-      ACTIVE_GAME_BY_ENCRYPTED_SUMMONER_ID,
-      [{ key: 'encryptedSummonerId', value: encryptedSummonerId }],
+      ACTIVE_GAME_BY_ENCRYPTED_PUUID,
+      [{ key: 'encryptedPUUID', value: encryptedPUUID }],
     );
   }
 

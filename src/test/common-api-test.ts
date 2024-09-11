@@ -12,7 +12,7 @@ export const testApiCall = async (
     .spyOn(apiClient, 'executeGet')
     .mockImplementationOnce(
       () =>
-        new Promise((resolve) =>
+        new Promise(resolve =>
           setTimeout(() => resolve(mocks[location]), 2000),
         ),
     );
